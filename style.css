@@ -1,0 +1,362 @@
+:root {
+	--pale-violet: hsl(276, 100%, 81%);
+	--moderate-violet: hsl(276, 55%, 52%);
+	--dark-violet: hsl(271, 15%, 43%);
+	--grayish-blue: hsl(206, 6%, 79%);
+	--very-dark-violet: hsl(271, 36%, 24%);
+	--dark-grayish-violet: hsl(270, 7%, 64%);
+
+	--light-magenta: hsl(293, 100%, 63%);
+	--very-light-magenta: hsl(289, 100%, 70%);
+	--light-violet: hsl(264, 100%, 61%);
+
+	--white: hsl(0, 0%, 100%);
+	--light-grayish-violet: hsl(270, 20%, 96%);
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.05%;
+}
+body {
+	font-family: "Rubik", sans-serif;
+	background: var(--light-grayish-violet);
+}
+
+#main {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.top {
+	width: 400px;
+	height: 700px;
+	background: linear-gradient(
+		to bottom left,
+		var(--light-magenta),
+		var(--light-violet)
+	);
+	border-radius: 200px;
+	position: absolute;
+	top: -21rem;
+	left: -25rem;
+	z-index: -1;
+}
+
+.bottom {
+	width: 400px;
+	height: 700px;
+	background: var(--grayish-blue);
+	opacity: 0.2;
+	border-radius: 200px;
+	position: absolute;
+	bottom: -25rem;
+	right: -25rem;
+	z-index: -1;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+/* mobile phone interface */
+#main .phone {
+	width: 25rem !important;
+	height: 52rem !important;
+	border: 10px solid var(--white);
+	border-radius: 35px;
+	background: var(--light-grayish-violet);
+	margin: 4rem 0;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 5px 20px 50px rgba(0, 0, 0, 0.2);
+}
+#main .phone:after {
+	content: " ";
+	width: 60%;
+	position: absolute;
+	height: 35px;
+	background: var(--white);
+	margin: 0 auto;
+	border-radius: 20px;
+	top: 0;
+	transform: translate(35%, -40%);
+}
+
+/* header of the mobile app */
+.heading {
+	height: 70px;
+	width: 100%;
+	background: linear-gradient(
+		to left,
+		var(--light-magenta),
+		var(--light-violet)
+	);
+	border-radius: 0 0 6px 6px;
+	box-shadow: 0 1px 15px var(--dark-grayish-violet);
+	padding: 2rem 1.5rem 0rem 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.detail-container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.heading i {
+	font-size: 1.2rem;
+	color: var(--white);
+}
+.heading .img {
+	background: url(/images/avatar.jpg) no-repeat center center/cover;
+	border: 2px solid var(--white);
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+}
+.details h3 {
+	font-family: "Rubik", sans-serif;
+	font-weight: 500;
+	font-size: 1.25rem;
+	color: var(--white);
+	line-height: 1.4;
+}
+.details p {
+	font-weight: 300;
+	font-size: 0.9rem;
+	color: var(--very-light-magenta);
+	line-height: 1.4;
+}
+
+/* chats interface of the app */
+.chats {
+	max-width: 93.5%;
+	margin: 1rem auto;
+	position: relative;
+}
+.chats ul {
+	display: flex;
+	flex-direction: column;
+}
+.chats ul li:not(.dog) {
+	font-size: 0.8rem;
+	line-height: 1.4;
+	font-weight: 500;
+	text-decoration: none;
+	list-style: none;
+	max-width: 60%;
+	/* height: 2rem; */
+	background: var(--grayish-blue);
+	margin-bottom: 0.6rem;
+	padding: 0.75rem;
+}
+.chats ul li:first-child,
+.chats ul li:nth-child(2),
+.chats ul li:nth-child(6),
+.chats ul li:nth-child(7),
+.chats ul li:nth-child(8) {
+	border-radius: 10px 10px 10px 0;
+	color: var(--moderate-violet);
+}
+.chats ul li:nth-child(4),
+.chats ul li:nth-child(5) {
+	border-radius: 10px 10px 0 10px;
+	align-self: flex-end;
+	color: var(--dark-violet);
+}
+.chats ul li:nth-child(7),
+.chats ul li:nth-child(8) {
+	max-width: 75%;
+	padding: 1rem;
+	background: linear-gradient(
+		to right,
+		var(--light-magenta),
+		var(--light-violet)
+	);
+}
+
+.chats ul li:nth-child(7) div,
+.chats ul li:nth-child(8) div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: var(--very-light-magenta);
+}
+
+.chats ul li:nth-child(7) div h3,
+.chats ul li:nth-child(8) div h3 {
+	display: inline-block;
+	align-self: flex-end;
+	font-size: 1.5rem;
+	color: var(--white);
+}
+
+.radio {
+	position: relative;
+	margin-right: 1rem;
+}
+.radio input[type="radio"] {
+	position: relative;
+	opacity: 0;
+	width: 20px;
+	z-index: 200;
+}
+.label {
+	height: 15px !important;
+	width: 15px !important;
+	border-radius: 50px;
+	border: 2px solid var(--very-light-magenta);
+	position: absolute;
+	top: -2px;
+	left: 2px;
+}
+
+.radio input[type="radio"]:checked + .label {
+	background: var(--very-light-magenta);
+}
+
+.dog {
+	justify-content: flex-end;
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+.dog1 {
+	height: 40px;
+	width: 40px;
+	background: url(images/dog-image-1.jpg) no-repeat center/cover;
+	border-radius: 5px;
+}
+.dog2 {
+	height: 40px;
+	width: 40px;
+	background: url(images/dog-image-2.jpg) no-repeat center/cover;
+	border-radius: 5px;
+}
+.dog3 {
+	height: 40px;
+	width: 40px;
+	background: url(images/dog-image-3.jpg) no-repeat center/cover;
+	border-radius: 5px;
+}
+
+.message {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 93.5%;
+	height: 40px;
+	margin: auto;
+	padding: 0.8rem;
+	border-radius: 50px;
+	background: var(--white);
+}
+
+.message p {
+	padding-left: 1rem;
+	color: var(--grayish-blue);
+}
+
+.message i {
+	background: var(--very-dark-violet);
+	color: var(--white);
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+}
+
+.desc {
+	width: 100%;
+	margin: auto;
+	padding: 0 4rem 4rem;
+}
+.desc h1 {
+	font-size: 4rem;
+	font-weight: 500;
+	line-height: 2;
+	text-align: center;
+	color: var(--very-dark-violet);
+}
+.desc p {
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	color: var(--dark-grayish-violet);
+}
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 500px) {
+	#main {
+		width: 100%;
+		height: 100vh;
+	}
+	.container {
+		width: 100%;
+		height: 90%;
+		flex-direction: row;
+		gap: 6rem;
+	}
+	.top {
+		height: 800px;
+		left: -10rem;
+	}
+	.bottom {
+		height: 800px;
+		right: -10rem;
+	}
+	.desc {
+		width: 40%;
+		margin: 0;
+		padding: 0;
+	}
+	.desc h1 {
+		font-size: 5rem;
+		text-align: left;
+	}
+	.desc p {
+		font-size: 2rem;
+		text-align: left;
+		line-height: 1.8;
+	}
+}
+
+@media (min-width: 1400px) {
+	.container {
+		gap: 10rem;
+	}
+	.top {
+		height: 900px;
+		width: 500px;
+		border-radius: 300px;
+		top: -26rem;
+		left: -15rem;
+	}
+	.bottom {
+		height: 900px;
+		width: 500px;
+		border-radius: 300px;
+		right: -15rem;
+	}
+	.desc {
+		width: 39%;
+	}
+}
